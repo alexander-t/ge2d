@@ -7,7 +7,7 @@ class AnimationSpecification extends Specification {
 
     def "Loop two cycles in a looping animation"() {
         given:
-        def animation = new Animation(true)
+        def animation = new Animation("animation", true)
         animation.addStep("one", 100)
         animation.addStep("two", 100)
         when:
@@ -33,7 +33,7 @@ class AnimationSpecification extends Specification {
 
     def "Traverse an entire non-looping animation chain"() {
         given:
-        def animation = new Animation(false)
+        def animation = new Animation("animation", false)
         animation.addStep("one", 100)
         animation.addStep("two", 200)
         animation.addStep("three", 300)

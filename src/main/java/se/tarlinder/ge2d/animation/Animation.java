@@ -13,6 +13,7 @@ public class Animation extends Component {
 
     private List<AnimationStep> steps = new ArrayList<>();
 
+    private String id;
     private boolean looping;
     private long totalDuration;
 
@@ -20,7 +21,8 @@ public class Animation extends Component {
     private long startTime = -1;
     private long elapsed;
 
-    public Animation(boolean looping) {
+    public Animation(String id, boolean looping) {
+        this.id = id;
         this.looping = looping;
     }
 
@@ -55,6 +57,14 @@ public class Animation extends Component {
                 }
             }
         }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public boolean isPlaying() {
+        return playing;
     }
 
     public String getSpriteId() {
